@@ -1,46 +1,204 @@
+/* 1. CORES E VARIÁVEIS GLOBAIS */
 :root {
     --bg: #0d0d0d;
     --card: #161616;
-    --primary: #10b981; /* Verde Neon */
+    --primary: #10b981; /* Verde Neon Vortex */
     --text: #ffffff;
     --text-dim: #a0a0a0;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-body { background: var(--bg); color: var(--text); line-height: 1.6; }
+/* 2. RESET E CONFIGURAÇÕES GERAIS */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+}
 
-header { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; }
-.logo { font-weight: 800; font-size: 1.5rem; }
-.logo span { color: var(--primary); }
-.btn-contato { color: var(--primary); text-decoration: none; border: 1px solid var(--primary); padding: 8px 20px; border-radius: 5px; font-weight: 600; transition: 0.3s; }
-.btn-contato:hover { background: var(--primary); color: #000; }
+body { 
+    background: var(--bg); 
+    color: var(--text); 
+    line-height: 1.6; 
+}
 
-.hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; }
-.hero h1 { font-size: 3rem; max-width: 800px; margin-bottom: 20px; }
-.hero h1 span { color: var(--primary); }
-.hero p { color: var(--text-dim); font-size: 1.2rem; max-width: 600px; margin-bottom: 30px; }
-.btn-scroll { color: #fff; text-decoration: none; font-size: 0.9rem; opacity: 0.7; }
+/* 3. CABEÇALHO (HEADER) */
+header { 
+    padding: 25px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
 
-.single-project { padding: 100px 5%; background: #111; }
-.container { max-width: 1100px; margin: 0 auto; }
-.tag { color: var(--primary); font-weight: bold; font-size: 0.8rem; letter-spacing: 2px; }
-.project-showcase { display: flex; gap: 50px; margin-top: 40px; align-items: center; }
+.logo { 
+    font-weight: 800; 
+    font-size: 1.5rem; 
+}
 
-.browser-mockup { background: #222; border-radius: 10px 10px 0 0; border: 1px solid #333; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-.dots { padding: 10px; display: flex; gap: 5px; background: #222; }
-.dots span { width: 8px; height: 8px; border-radius: 50%; background: #444; }
-.project-image { flex: 1; }
-.project-image img { width: 100%; display: block; filter: grayscale(20%); transition: 0.5s; }
-.project-image:hover img { filter: grayscale(0%); }
+.logo span { 
+    color: var(--primary); 
+}
 
-.project-details { flex: 0.8; }
-.project-details h3 { margin-bottom: 20px; }
-.project-details ul { list-style: none; margin-bottom: 30px; }
-.project-details li { margin-bottom: 12px; color: var(--text-dim); }
-.project-details i { color: var(--primary); margin-right: 10px; }
-.btn-demo { background: var(--primary); color: #000; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+.btn-contato { 
+    color: var(--primary); 
+    text-decoration: none; 
+    border: 1px solid var(--primary); 
+    padding: 8px 20px; 
+    border-radius: 5px; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
 
-.cta-final { padding: 100px 5%; text-align: center; }
+.btn-contato:hover { 
+    background: var(--primary); 
+    color: #000; 
+}
+
+/* 4. SEÇÃO PRINCIPAL (HERO) */
+.hero { 
+    height: 80vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 0 10%; 
+}
+
+.hero h1 { 
+    font-size: 3rem; 
+    max-width: 800px; 
+    margin-bottom: 20px; 
+}
+
+.hero h1 span { 
+    color: var(--primary); 
+}
+
+.hero p { 
+    color: var(--text-dim); 
+    font-size: 1.2rem; 
+    max-width: 600px; 
+    margin-bottom: 30px; 
+}
+
+.btn-scroll { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    opacity: 0.7; 
+}
+
+/* 5. PORTFÓLIO (GRID COM 2 PROJETOS) */
+.portfolio-grid { 
+    padding: 100px 5%; 
+    background: #111; 
+}
+
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+.tag { 
+    color: var(--primary); 
+    font-weight: bold; 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+}
+
+.projects-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 40px; 
+    margin-top: 40px; 
+}
+
+/* CARD DO PROJETO */
+.project-card { 
+    background: var(--card); 
+    border-radius: 15px; 
+    padding: 20px; 
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.project-card:hover { 
+    border-color: var(--primary); 
+    transform: translateY(-5px); 
+}
+
+/* MOCKUP DO NAVEGADOR (Onde fica a print) */
+.browser-mockup { 
+    background: #222; 
+    border-radius: 10px 10px 0 0; 
+    border: 1px solid #333; 
+    overflow: hidden; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
+}
+
+.dots { 
+    padding: 10px; 
+    display: flex; 
+    gap: 5px; 
+    background: #222; 
+}
+
+.dots span { 
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    background: #444; 
+}
+
+.project-card img { 
+    width: 100%; 
+    display: block; 
+    filter: grayscale(20%); 
+    transition: 0.5s; 
+}
+
+.project-card:hover img { 
+    filter: grayscale(0%); 
+}
+
+.project-info { 
+    margin-top: 20px; 
+}
+
+.project-info h3 { 
+    color: var(--primary); 
+    margin-bottom: 10px; 
+}
+
+.project-info p { 
+    color: var(--text-dim); 
+    font-size: 0.9rem; 
+    margin-bottom: 20px; 
+}
+
+.btn-view { 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* 6. CHAMADA FINAL (CTA) E BOTÕES SOCIAIS */
+.cta-final { 
+    padding: 100px 5%; 
+    text-align: center; 
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
 .btn-instagram {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     color: white;
@@ -59,19 +217,32 @@ header { padding: 25px 5%; display: flex; justify-content: space-between; align-
     transform: scale(1.05);
     filter: brightness(1.1);
 }
-.btn-whatsapp { background: #25d366; color: white; padding: 15px 30px !important; border-radius: 50px; display: inline-flex; align-items: center; gap: 15px; text-decoration: none; font-size: 1.1rem; font-weight: bold; margin-top: 0 !important; }
 
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espaço entre os botões */
-    margin-top: 30px;
-    flex-wrap: wrap; /* Para não quebrar em telas pequenas */
+.btn-whatsapp { 
+    background: #25d366; 
+    color: white; 
+    padding: 15px 30px !important; 
+    border-radius: 50px; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 15px; 
+    text-decoration: none; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    margin-top: 0 !important; 
 }
 
-footer { padding: 40px; text-align: center; border-top: 1px solid #222; color: #444; font-size: 0.8rem; }
+/* 7. RODAPÉ (FOOTER) */
+footer { 
+    padding: 40px; 
+    text-align: center; 
+    border-top: 1px solid #222; 
+    color: #444; 
+    font-size: 0.8rem; 
+}
 
+/* 8. RESPONSIVIDADE (CELULAR) */
 @media (max-width: 768px) {
-    .project-showcase { flex-direction: column; }
     .hero h1 { font-size: 2rem; }
+    .projects-container { grid-template-columns: 1fr; }
 }
